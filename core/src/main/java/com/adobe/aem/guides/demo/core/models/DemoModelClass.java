@@ -10,9 +10,7 @@ import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 
 /**
- * Updated the file
  * 
- * Comments
  * @author mkkol
  *
  */
@@ -23,6 +21,12 @@ public class DemoModelClass {
 	
 	@Inject
 	private String text;
+	
+	private String textarea;
+
+	public String getTextarea() {
+		return textarea;
+	}
 
 	public String getText() {
 		return text;
