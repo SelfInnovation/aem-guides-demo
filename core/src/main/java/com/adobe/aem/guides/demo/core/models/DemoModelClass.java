@@ -10,7 +10,7 @@ import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 
 /**
- * Updated
+ * Updated the file
  * @author mkkol
  *
  */
