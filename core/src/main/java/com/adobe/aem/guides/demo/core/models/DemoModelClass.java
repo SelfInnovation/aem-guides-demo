@@ -15,17 +15,16 @@ import org.apache.sling.models.annotations.Model;
  *
  */
 
-
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class DemoModelClass {
-	
+
 	@Inject
 	private String text;
-	
-	private String textarea;
+	@Inject
+	private String tarea;
 
-	public String getTextarea() {
-		return textarea;
+	public String getTarea() {
+		return tarea;
 	}
 
 	public String getText() {
