@@ -2,6 +2,7 @@ package com.adobe.aem.guides.demo.core.schedulers;
 
 import org.apache.sling.commons.scheduler.Scheduler;
 import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.metatype.annotations.Designate;
 
 
@@ -10,7 +11,7 @@ import org.osgi.service.metatype.annotations.Designate;
 public class DemoSchedular implements Runnable{
 
 	
-	
+	@Reference
 	Scheduler schedular;
 	
 	@Override
