@@ -8,6 +8,8 @@ import org.osgi.service.metatype.annotations.Designate;
 
 @Designate(ocd=SimpleScheduledTask.Config.class)
 @Component(service = Runnable.class, immediate = true)
+
+
 public class DemoSchedular implements Runnable{
 
 	
