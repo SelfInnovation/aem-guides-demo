@@ -11,7 +11,6 @@ import com.adobe.granite.workflow.exec.WorkflowProcess;
 import com.adobe.granite.workflow.metadata.MetaDataMap;
 import com.adobe.granite.workflow.model.WorkflowModel;
 
-
 /*
  * 
  * To create a Custom Workflow Process-
@@ -27,20 +26,26 @@ The execute() method has three parameters -
 
 */
 
-
-public class SampleWorkflow implements WorkflowProcess{
+public class SampleWorkflow implements WorkflowProcess {
 
 	ResourceResolver resourceResolver;
 	String path = "/content/";
-	
+
 	@Override
-	public void execute(WorkItem workItem, WorkflowSession wfSession, MetaDataMap metaDataMap) throws WorkflowException {
+	public void execute(WorkItem workItem, WorkflowSession wfSession, MetaDataMap metaDataMap)
+			throws WorkflowException {
+			
+				
+	String path=	workItem.getWorkflowData().getPayload().toString();
+	
+	
 
-		WorkflowSession workflowsession =  resourceResolver.adaptTo(WorkflowSession.class);
+		
+		
+		
+		WorkflowSession workflowsession = resourceResolver.adaptTo(WorkflowSession.class);
 		WorkflowModel wfmodel = workflowsession.getModel(path);
-		
 
-		
 	}
 
 }
