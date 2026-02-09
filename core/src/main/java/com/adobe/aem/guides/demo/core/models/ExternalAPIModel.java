@@ -15,23 +15,18 @@ import com.adobe.aem.guides.demo.interfaces.StudentConfigurationMethodsInterface
 
 )
 public class ExternalAPIModel {
-	
-	
+
 	String apiresponse;
-	
+
 	@OSGiService
 	StudentConfigurationMethodsInterface studentConfigurationMethodsInterface;
-	
-	
+
 	@PostConstruct
-	protected void init() throws IOException
-	{
-		apiresponse =  studentConfigurationMethodsInterface.fetchExternalAPIMethod();
+	protected void init() throws IOException {
+		apiresponse = studentConfigurationMethodsInterface.fetchExternalAPIMethod();
 	}
-	
-	
+
 	public String getApiResponse() {
 		return apiresponse;
 	}
-
 }

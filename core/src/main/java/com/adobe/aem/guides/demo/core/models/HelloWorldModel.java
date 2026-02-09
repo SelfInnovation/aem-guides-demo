@@ -36,31 +36,29 @@ import java.util.Optional;
 @Model(adaptables = Resource.class)
 public class HelloWorldModel {
 
-    @ValueMapValue(name=PROPERTY_RESOURCE_TYPE, injectionStrategy=InjectionStrategy.OPTIONAL)
-    @Default(values="No resourceType")
-    protected String resourceType;
+	@ValueMapValue(name = PROPERTY_RESOURCE_TYPE, injectionStrategy = InjectionStrategy.OPTIONAL)
+	@Default(values = "No resourceType")
+	protected String resourceType;
 
-    @SlingObject
-    private Resource currentResource;
-    @SlingObject
-    private ResourceResolver resourceResolver;
+	@SlingObject
+	private Resource currentResource;
+	@SlingObject
+	private ResourceResolver resourceResolver;
 
-    private String message;
+	private String message;
 
-    @PostConstruct
-    protected void init() {
-        PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
-        String currentPagePath = Optional.ofNullable(pageManager)
-                .map(pm -> pm.getContainingPage(currentResource))
-                .map(Page::getPath).orElse("");
+	@PostConstruct
+	protected void init() {
+		PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
+		String currentPagePath = Optional.ofNullable(pageManager).map(pm -> pm.getContainingPage(currentResource))
+				.map(Page::getPath).orElse("");
 
-        message = "Hello World!\n"
-            + "Resource type is: " + resourceType + "\n"
-            + "Current page is:  " + currentPagePath + "\n";
-    }
+		message = "Hello World!\n" + "Resource type is: " + resourceType + "\n" + "Current page is:  " + currentPagePath
+				+ "\n";
+	}
 
-    public String getMessage() {
-        return message;
-    }
+	public String getMessage() {
+		return message;
+	}
 
 }

@@ -21,9 +21,6 @@ public class HeroBannerModel {
 	private String ctaLink;
 	@ValueMapValue
 	private String variation;
-	
-	
-	
 
 	public String getHeading() {
 		return heading;
@@ -48,21 +45,18 @@ public class HeroBannerModel {
 	public String getVariation() {
 		return variation;
 	}
-	
-	
+
 	public boolean isLeft() {
 		return "left".equalsIgnoreCase(variation);
 	}
-	
-		public boolean isRight() {
-			return "right".equalsIgnoreCase(variation);
-		}
-		
-		public boolean isCenter() {
-			return "center".equalsIgnoreCase(variation);
-		}
-		
 
+	public boolean isRight() {
+		return "right".equalsIgnoreCase(variation);
+	}
+
+	public boolean isCenter() {
+		return "center".equalsIgnoreCase(variation);
+	}
 
 	protected void init() {
 
