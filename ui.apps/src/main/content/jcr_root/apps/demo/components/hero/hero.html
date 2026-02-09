@@ -1,0 +1,34 @@
+<div data-sly-use.model="com.demo.core.models.HeroModel"
+     class="hero hero--${model.variation}">
+
+    <!-- IMAGE LEFT -->
+    <div data-sly-test="${model.isLeft}">
+        <img src="${model.image}" />
+        <div>
+            <h1>${model.heading}</h1>
+            <p>${model.description}</p>
+        </div>
+    </div>
+
+    <!-- IMAGE RIGHT -->
+    <div data-sly-test="${model.isRight}">
+        <div>
+            <h1>${model.heading}</h1>
+            <p>${model.description}</p>
+        </div>
+        <img src="${model.image}" />
+    </div>
+
+    <!-- CENTER / FULL -->
+    <div data-sly-test="${model.isCenter}">
+        <h1>${model.heading}</h1>
+        <p>${model.description}</p>
+    </div>
+
+    <!-- CTA -->
+    <a data-sly-test="${model.hasCta}"
+       href="${model.ctaLink}">
+       ${model.ctaText}
+    </a>
+
+</div>
